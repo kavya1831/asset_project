@@ -1,10 +1,10 @@
 from django.db import models
 
 class Users(models.Model):
-    id         = models.AutoField(primary_key=True)
-    name       = models.CharField(max_length=100, default="")
-    email_id   = models.CharField(max_length=80,default="")
-    phone_no   = models.CharField(max_length=13, default="")
+    id           = models.AutoField(primary_key=True)
+    asset_name   = models.CharField(max_length=100, default="")
+    asset_room   = models.CharField(max_length=80,default="")
+    asset_pv     = models.CharField(max_length=10, default="")
 
 
 
