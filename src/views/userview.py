@@ -1,5 +1,6 @@
 from django.http import JsonResponse
 from rest_framework.views import APIView
+from src.libraries.userlib import UserLib
 
 class UserView(APIView):
     def get(self,requests):
@@ -8,6 +9,6 @@ class UserView(APIView):
         return JsonResponse(Response)
 
     def post(self, requests):
-        print requests.data
-        Response = {"success": True, "message":"POST API working successfully"}
+        response_text,success_status = UserLib().creatUser(user_info=requests.data)
+        Response = {"success": True, "message":response_text}
         return JsonResponse(Response)
